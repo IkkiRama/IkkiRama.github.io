@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Game Percabangan JavaScript</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+		font-family: sans-serif;
+		box-sizing: border-box;
+		outline: none;
+	}
+
+	body{
+		background: #fff;
+		overflow-x: hidden;
+	}
+
+
+	.boxGaleri{
+		width: 100%;
+		height: 100vh;
+	}
+
+
+	.galeri{
+		width: 100%;
+		height: 100%;
+		background-image: url("2.jpg");
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-color: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	h2{
+		font-size: 5vw;
+		color: #fff;
+	}
+
+
+	.galeri4{
+		flex-direction: column;
+	}
+
+	.fa-heart{
+		color: red;
+	}
+
+	.hitam{
+		color: #000;
+	}
+	</style>
+</head>
+<body>
+	
+
+	<div class="boxGaleri">
+		<div class="galeri galeri1">
+			<h2>I <i class="fa fa-heart"></i> You</h2>
+		</div>
+
+		<div class="galeri galeri2">
+			<h2>Can You Be My Wife?🥰🥰🥰</h2>
+		</div>
+
+		<div class="galeri galeri3">
+			<h2>I Just Wanna Say I <i class="fa fa-heart"></i> U</h2>
+		</div>
+
+		<div class="galeri galeri4">
+			<h2 class="hitam">Game Acak Warna</h2>
+			<button>Acak Warna</button>
+		</div>
+	</div>
+
+
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ==" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+	<script type="text/javascript">
+
+		let button = document.querySelector('button')
+		let galeri = document.querySelector('.galeri4')
+
+		button.addEventListener('click', ()=>{
+			let r = Math.round(Math.random() * 255 + 1)
+			let g = Math.round(Math.random() * 255 + 1)
+			let b = Math.round(Math.random() * 255 + 1)
+
+			galeri.style.backgroundColor = "rgb("+r+", "+g+", "+b+")"
+		})
+
+
+
+
+
+	gsap.to('.fa-heart', {
+		scale:1.2,
+		repeat:-1,
+		opacity:1,
+		yoyo:true,
+		duration:.3
+
+	})
+
+
+	swal("Tulis nama kamu😊:", {
+	  content: "input",
+	})
+	.then((value) => {
+		swal(`Assalamu'alaikum ${value} `, "Aku ada permainan untuk kamu, Udah siap belum ni?")
+		.then((value) => {
+			swal(`Bismillah dulu coba`)
+			.then(() => {
+				swal("Aku minta kamu jawab dengan jujur 😊")
+				.then(() => {
+					swal("Kamu sayang ga sama aku 😄", {
+						buttons: {
+					    	cancel: "Ga",
+					    	catch: {
+						      	text: "Sayang",
+						    	value: "catch",
+					    	},
+					    	defeat: false,
+						},
+					})
+
+					.then((value) => {
+					  	switch (value) {
+
+						    case "catch":
+						    	swal("Awww Makasih 🥰🥰🥰 Aku juga sayang sama kamu🤣🤣🤣")
+						    	.then(()=>{
+						    		swal("Boleh ga, aku menyatakan cinta padamu? ", {
+										buttons: {
+									    	cancel: "Ga",
+									    	catch: {
+										      	text: "Boleh",
+										    	value: "boleh",
+									    	},
+									    	defeat: false,
+										},
+									})
+
+									.then((value)=>{
+										switch (value) {
+
+								    		case "boleh":
+								    			swal("Mau menyatakan offline apa online nih😂🤣", {
+													buttons: {
+												    	cancel: "Online",
+												    	catch: {
+													      	text: "Offline",
+													    	value: "offline",
+												    	},
+												    	defeat: false,
+													},
+												})
+
+												.then((value) => {
+													switch (value) {
+												 
+												    case "offline":
+												    	swal("Ok, Siap-siap ya 🤣🤣🤣")
+												    	.then(()=>{
+												    		swal("Komitmen!!!", "Kalo emang beneran mau, aku harap kita sama-sama berkomitmen untuk terus bersama apapun yang terjadi, tetap sama aku terus yaaa")
+												    		.then(()=>{
+												    			swal("Makasih sudah mau maini game ini🤣🤣🤣")
+												    			.then(()=>{
+													    			swal("Sekarang coba scroll kebawah dan baca kalimatnya")
+													    			.then(()=>{
+															    		swal("Btw, ada game loh yang aku buat untuk kamu, ya walaupun seerhana sih😂🤣")
+													    				.then(()=>{
+															    			swal("Love you😚😚😚😚")
+													    				})
+													    			})
+												    			})
+												    		})
+												    	})
+												    	break;
+												 
+												    default:
+												    	swal("Ok, mulai hari ini kita jadian!!", "Jangan lupa Catat tanggalnya🤣."+ new Date())
+												    	.then(()=>{
+												    		swal("Komitmen!!!", "Kalo emang beneran mau, aku harap kita sama-sama berkomitmen untuk terus bersama apapun yang terjadi, tetap sama aku terus yaaa")
+												    		.then(()=>{
+													    		swal("Makasih sudah mau maini game ini🤣🤣🤣")
+													    		.then(()=>{
+													    			swal("Sekarang coba scroll kebawah dan baca kalimatnya")
+														    		.then(()=>{
+															    		swal("Btw, ada game loh yang aku buat untuk kamu, ya walaupun seerhana sih😂🤣")
+															    		.then(()=>{
+																    		swal("Love you😚😚😚😚")
+															    		})
+														    		})
+													    		})
+													    	})
+												    	})
+													}
+
+												})
+										    	break;
+									 
+									    	default:
+							    				swal("Jahate😒🙁😤😠😡🤬")
+						    			}
+									})
+						    	})
+
+						    		
+						    	break;
+						 
+						    default:
+						      swal("Jahate😒🙁😤😠😡🤬")
+						}
+					})
+
+
+				})
+			})
+		})
+
+
+	});
+
+	
+
+	</script>
+</body>
+</html>
